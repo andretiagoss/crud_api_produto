@@ -30,6 +30,9 @@ namespace ATSS.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            //Adicionando o midware de ApplicationInsights para monitoramento da API.
+            services.AddApplicationInsightsTelemetry("4b5ed562-e712-42bb-a06f-39779dea28cb");
+
             services.AddMvc()
                 .SetCompatibilityVersion(CompatibilityVersion.Version_2_2)
                 .AddJsonOptions(opt=>{
