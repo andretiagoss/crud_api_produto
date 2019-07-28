@@ -1,0 +1,37 @@
+Curso - Asp.Net Core 2.2 + EF Core 2.2 + Github + Azure
+
+Comandos no terminal:
+dotnet --version (visualizar versão do dotnet)
+git --version (visualizar versão do git)
+dotnet new (comando para criar novo projeto)
+dotnet build (comando para buildar a aplicação)
+dotnet run (comando para executar a aplicação)
+
+Etapas de criação do projeto:
+ - Instalação do dotnet core na versão atual;
+ - Instalação via nuget do Entity Framework In Memory (Microsoft.EntityFrameworkCore.InMemory);
+ - Criação da entidade Produto;
+ - Criação do contexto da classe Produto herdando da classe DbContext, com a propriedade com o DbSet de Produto e com o construtor recebendo por parametro o objeto do tipo DbContextOptions;
+ - Criação da Interface de Produtos com as assinaturas para os metodos CRUD;
+ - Criação da classe de produto que implementa a interface;
+ - Criação da controller com os verbos CRUD da API;
+ - Criação das rotas (URL) de cada método;
+ - Ajuste da controller para injetar e utilizar o repositorio;
+ - Configurar na classe Startup a insejção de dependencia;
+ - Ajustes do response dos codigos do status (HttpStatusCode) dos métodos;
+ - Instalação via nuget do Midware de versionamento;
+ - Ajuste da rota na Controler para adicionar os parametros de versionamento (Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer);
+ - Configuração do gerenciamento de Cache na classe Staturp, ajuste dos métodos Get da Controller para uso do Cache.
+ - Configuração do midware de Compressão para comprimir o response do tamanho dos dados na API.
+ - Instalação via nuget do pacote para trabalhar com response de XML (Microsoft.AspNetCore.Mvc.Formatters.Xml);
+ - Habilitar o response de XMLs na classe Staturp no método ConfigureServices e na requisição acrescentar o header Accept com o valor application/xml;
+ - Para remover valor nulos do response é necessário habilitar essa opção na classe Staturp no método ConfigureServices.
+ - Para instalar o swagger é necessário baixar e instalar o pacote Swashbuckle.AspNetCore.
+ - Para usar o swagger no projeto é necessário realizar as configurações nos métodos ConfigureServices e Configure da Classe Staturp.
+
+Azure:
+ - Criação da conta gratuita
+ - Criação do grupo de recursos (agrupa serviços)
+ - Criação do serviço de aplicativo, com escolha do grupo de recurso e plano de serviço.
+ - Vincular o repositorio do github com as opçãoes de implantação do serviço no Azure
+ - Para trabalhar com o Application Insights é necessário habilitá-lo para o serviço no Azure, baixar o pacote nuget Microsoft.ApplicationInsights.AspNetCore 
